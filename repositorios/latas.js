@@ -1,5 +1,6 @@
 const latas = []
 let last_id = 0
+const validar = require('../validacoes/lata.js')
 
 const repositorio = {
     get: () => {
@@ -9,6 +10,7 @@ const repositorio = {
         return latas.filter(lata => lata.id == id)
     },
     create: (lata) => {
+        validar(lata)
         lata.id = ++last_id
         latas.push(lata)
         console.log(lata)

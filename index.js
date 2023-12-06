@@ -9,6 +9,7 @@ app.use(express.json())
 // MIDDLEWARE
 app.use((req, res, next) => {
     console.log(req.body)
+    next()
 })
 
 app.use(rotas)
